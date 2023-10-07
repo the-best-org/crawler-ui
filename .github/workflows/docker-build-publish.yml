@@ -98,13 +98,13 @@ jobs:
           context: .
           load: true
           file: ./Dockerfile-test
-          tags: ${{ env.TEST_TAG }}
+          tags: ${{ steps.meta.outputs.tags }}
       
       - name: Test image
         id: test-image
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          docker run --rm ${{ env.TEST_TAG }} \
+          docker run --rm ${{ steps.meta.outputs.tags }} \
           -e MONGO=${{ vars.MONGOADDRESS }} \
           -e MONGO_PORT=${{ vars.MONGOPORT }}
       
