@@ -11,3 +11,5 @@ RUN pip install --upgrade pip && \
 EXPOSE 8000
 
 WORKDIR /app/ui
+
+ENTRYPOINT [ "/bin/sh", "tests/test.sh" ]
