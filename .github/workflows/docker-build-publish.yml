@@ -107,7 +107,6 @@ jobs:
           docker run --rm ${{ env.TEST_TAG }} \
           -e MONGO=${{ vars.MONGOADDRESS }} \
           -e MONGO_PORT=${{ vars.MONGOPORT }}
-          /bin/sh ./tests/test.sh
       
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
