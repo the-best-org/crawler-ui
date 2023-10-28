@@ -136,3 +136,4 @@ jobs:
     if:  ${{ github.event_name != 'pull_request' }}
     with:
       crawler-ui-image: ${{ needs.build.outputs.imageTag }}
+    secrets: inherit
