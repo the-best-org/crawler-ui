@@ -1,4 +1,4 @@
-name: Docker
+name: Build Crawler-UI Docker image
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -132,7 +132,7 @@ jobs:
 
   deploy:
     needs: build
-    uses: the-best-org/cicd/.github/workflows/apply-helm.yml@main
+    uses: the-best-org/cicd/.github/workflows/apply-helm-crawler-ui.yml@main
     if:  ${{ github.event_name != 'pull_request' }}
     with:
       crawler-ui-image: ${{ needs.build.outputs.imageTag }}
